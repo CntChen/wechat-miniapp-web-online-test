@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <web-view src="https://cntchen.com/network-test.html"></web-view>
+</view>

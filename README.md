@@ -17,6 +17,22 @@ Android 异常: 断开网络时 window.navigator.onLine 无法获取到页面离
 3. 在真机上打开小程序
 4. 断开手机网络, 观察小程序页面的 `网络状态`
 
+## 测试页面
+
+`./network-test.html`
+
+## 兼容解决方法
+[getNetworkStatus.js](./getNetworkStatus.js)
+
+用法:
+```
+import { getNetworkStatus } from './getNetworkStatus.js';
+
+// 网络状态
+let onLine;
+getNetworkStatus().then(res => onLine = res);
+```
+
 ## References
 
 [浏览器离线检测兼容性](https://caniuse.com/#feat=online-status)

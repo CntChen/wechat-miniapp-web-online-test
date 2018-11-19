@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>network test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            padding-top: 128px;
+        }
+        
+        #status {
+            color: red;
+        }
+    </style>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+</head>
+<body>
+    <div>
+        <span>网络状态:</span>
+        <span id="status"></span>
+    </div>
+    <div id="time"></div>
+    <div>使用 <e>window.navigator.onLine</e>检测网络状态, Android小程序中无效.</div>
+    <script>
+        wx.getNetworkType({
+          success: (e) => console.log(e),
+          complete: (e) => console.log(e),
+        })
+        var statusEle = document.getElementById('status');
+        var timeEle = document.getElementById('time');
+        setInterval(() => {
+            if(window.navigator.onLine) {
+              statusEle.innerText = '在线';
+            } else {
+              statusEle.innerText = '离线';
+            }
+            timeEle.innerHTML = new Date();
+        }, 1000)
+    </script>
+</body>
+</html>

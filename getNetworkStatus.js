@@ -11,7 +11,7 @@ const isAndroid = /android/i.test(ua);
 
 const getNetworkStatusPromiseFun = (resolve) => {
   try {
-    //
+    // 官方文档: https://developers.weixin.qq.com/miniprogram/dev/api/device/network/wx.getNetworkType.html
     // 文档有差异, 无网络下会进入 fail
     wx && wx.getNetworkType({
       success: (res) => {
